@@ -1,0 +1,213 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #191919;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.background-video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+}
+
+.main-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 30px;
+}
+
+.horizontal-stack {
+    display: flex;
+    justify-content: space-between; /* Pushes items to the edges */
+    align-items: center;
+    width: 100%; /* Ensure full-width alignment */
+    gap: 24px
+}
+
+.main-logo {
+    height: 15em;
+}
+
+.supporting-image-section {
+    position: relative;
+}
+
+.supporting-image {
+    height: 15em;
+    border-radius: 8px;
+}
+
+.dotted-line {
+    position: absolute;
+    width: 327.5px;
+    height: 175.19px;
+    left: 446px;
+    top: -14px;
+}
+
+.description-text {
+    text-align: left;
+}
+
+.description-text .bold-text {
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.description-text .regular-text {
+    font-weight: 400;
+    font-size: 18px;
+    color: #b0b0b0;
+}
+
+.compatible-section {
+    text-align: left;
+    flex: 1; /* Take space on the left */
+}
+
+
+.compatible-section p {
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.logo-stack {
+    display: flex;
+    /* justify-content: center; */
+    gap: 24px;
+}
+
+.logo-stack .brand-logo {
+    width: 100px;
+}
+
+.button-section {
+    text-align: right;
+    flex: 1; /* Ensure it takes up space on the right */
+    display: flex; /* Use flex for alignment */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center elements vertically */
+    align-items: flex-end; /* Align items to the right */
+    gap: 10px; /* Add some space between the text and button */
+    
+}
+
+.button-section .size-text {
+    font-size: 16px;
+    color: #b0b0b0;
+    margin-bottom: 10px;
+}
+
+.chrome-button-bg {
+    width: 200px;
+    height: auto;
+    display: block;
+    
+}
+
+.free-text-section {
+    margin-top: 10px;
+}
+
+.free-text {
+    width: 100%;
+    max-width: 100vw;
+    bottom: 0px;
+    position: absolute;
+}
+
+.gradient-button {
+    font-size: 1.2rem;
+    padding: 15px 40px;
+    color: white;
+    text-transform: uppercase;
+    border:none;
+    border-radius: 12px; /* Rounded rectangle corners */
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+      to right,
+      rgba(81, 80, 78, 0.415),
+      rgba(81, 80, 78, 0.332),
+      rgba(81, 80, 78, 0.332)
+    ),
+    url('dotted-line-box.png'); 
+    background-size: cover;
+    background-position: center; /* Center the image */
+    box-shadow: inset 0 0.1px 0.2px 0.3px rgba(250, 206, 12, 0.778), 
+                inset 0 0.3px 0.2px 0.1px rgba(226, 50, 49, 0.778), 
+              0 4px 10px rgba(0, 0, 0, 0.4),
+              0 0 10px rgba(255, 255, 255, 0.1); /* Glow effect */
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    
+
+}
+
+.gradient-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent);
+    border-radius: 12px; /* Matches button corners */
+    mix-blend-mode: screen; /* Creates a reflective effect */
+    opacity: 1;
+    animation: rainbow-glow 3s infinite;
+  }
+
+.gradient-button:hover {
+  transform: scale(1.05); /* Subtle zoom effect */
+  box-shadow: inset 0 0.1px 0.2px 0.3px rgba(250, 206, 12, 0.778), 
+  inset 0 0.3px 0.2px 0.1px rgba(226, 50, 49, 0.778), 
+              0 6px 15px rgba(0, 0, 0, 0.6),
+              0 0 20px rgba(255, 255, 255, 0.3); /* Stronger glow on hover */
+}
+
+.gradient-button:hover::after {
+  opacity: 0.8;
+}
+
+/* Animation for glowing colors */
+@keyframes rainbow-glow {
+    0% {
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2), transparent);
+    }
+    50% {
+      background: radial-gradient(circle at center, rgba(255, 200, 200, 0.2), transparent);
+    }
+    100% {
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2), transparent);
+    }
+  }
+  
